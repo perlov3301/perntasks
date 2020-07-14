@@ -3,7 +3,7 @@ CREATE DATABASE perntasks;
 CREATE TABLE tasks(
     task_id SERIAL  NOT NULL PRIMARY KEY,
     username VARCHAR(30) NOT NULL,
-    phone INTEGER NOT NULL,
+    phone VARCHAR(10) NOT NULL,
     email VARCHAR(30) NOT NULL,
     date_of_creating DATE NOT NULL
                     

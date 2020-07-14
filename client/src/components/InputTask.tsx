@@ -6,7 +6,7 @@ const InputTask = () => {
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [date_of_creating, setDate] = useState("");
+  const [date_of_creating, setDate_of_creating] = useState("");
 
   const onSubmitform = async (e: any) => {
     e.preventDefault();
@@ -17,7 +17,10 @@ const InputTask = () => {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
       });
-      console.log(response);
+      console.log("response from InputTasks.tsx(fetch)");
+      console.log(response)
+  // host hostname href<---  pathname (relative to the host) port protocol  search 
+      window.location.href = "/";
     } catch (err) { console.error(err.message); }
   };
     return (
@@ -38,7 +41,7 @@ const InputTask = () => {
                 </label><br/>
                 <label> Date
                   <input type="date" className="form-control" name="date"  
-                    id="date" value={date_of_creating} onChange={e => setDate(e.target.value)} />
+                    id="date" value={date_of_creating} onChange={e => setDate_of_creating(e.target.value)} />
                 </label> <br/>
                 <button className="btn btn-success">Add</button>
             </form>
